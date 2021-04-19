@@ -1,5 +1,7 @@
-$accent:#333333;
-$white:#FFFFFF;
-$grey:#D6D6D6;
-$bgc:#F9F9F9;
-$hardGrey:#979797;
+@import '../scss/mixins.scss';
+@import '../scss/variables.scss';
+
+
+@include ff('gilroylight', 'Gilroy','gilroy-light-webfont');
+@include ff('gilroyextrabold','Gilroy' ,'gilroy-extrabold-webfont');
+

@@ -5,9 +5,7 @@ const rimraf = require("rimraf")
 const srcPath = path.dirname(__dirname)
 
 const componentsArr = [
-    'Articles',
-    'Another',
-    'Etx',
+   'Test',
     [
         '.tsx',
         '.module.scss'
@@ -19,7 +17,8 @@ Promise.resolve()
 .then(() => {
     const createComponents = new TemplateForCreateBasicLogic(componentsArr)
 
-    createComponents.createLogic()
+    createComponents.createLogic(false)
+    // createComponents.removeLogic()
 })
 
 
@@ -234,7 +233,7 @@ export type ErrorType = {
         });
     }
 
-    createLogic(){
+    createLogic(bool = true){
         this.arr.forEach(e => {
             if(Array.isArray(e)){
                 return
@@ -255,7 +254,7 @@ export type ErrorType = {
                     return
                    }
                 fs.appendFile(`${this.componentsPath}/${e}/${e}${e2}`,'',(err) => {})
-                this.#createReduxLogic(e.toLowerCase())
+                bool && this.#createReduxLogic(e.toLowerCase())
             })
         })
     }
