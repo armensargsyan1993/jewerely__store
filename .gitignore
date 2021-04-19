@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/__node__basic__template__config
 
 
 # testing
@@ -13,7 +14,6 @@
 /build
 
 # misc
-.env
 .DS_Store
 .env.local
 .env.development.local
