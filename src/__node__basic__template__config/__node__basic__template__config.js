@@ -5,11 +5,7 @@ const rimraf = require("rimraf")
 const srcPath = path.dirname(__dirname)
 
 const componentsArr = [
-   'Test',
-    [
-        '.tsx',
-        '.module.scss'
-    ]
+   'Home',
 ]
 
 
@@ -17,12 +13,14 @@ Promise.resolve()
 .then(() => {
     const createComponents = new TemplateForCreateBasicLogic(componentsArr)
 
-    createComponents.createLogic(false)
-    // createComponents.removeLogic()
+    // createComponents.createLogic()
+    createComponents.removeLogic()
 })
 
 
 //createLogic() to create components files and redux files
+//createLogic(true) to create only components files
+//createLogic(false,true) to create only redux files
 //removeLogic() to delete packages in (redux + components) who combines in componentsArr 
 
 //if need another template crete function like this
@@ -221,6 +219,7 @@ export type ErrorType = {
 
 
     #createReduxLogic = (name) =>{
+        name = name.toLowerCase()
         fs.mkdir(`${this.reduxPath}/${name}`,(err) => {})
         fs.stat(`${this.reduxPath}/${name}/${name}Reducer.ts`, (err) => {  
             if (err) {
@@ -233,29 +232,36 @@ export type ErrorType = {
         });
     }
 
-    createLogic(bool = true){
-        this.arr.forEach(e => {
-            if(Array.isArray(e)){
+    #createComponentLogic = (name) => {
+        fs.mkdir(`${this.componentsPath}/${name}`,(err) => {})
+        fs.stat(`${this.componentsPath}/${name}/${name}.tsx`, (err) => {  
+            if (err) {
+                fs.appendFile(`${this.componentsPath}/${name}/${name}.tsx`,this.#baseComponentTemplate(name),(err) => {})
+                fs.appendFile(`${this.componentsPath}/${name}/${name}.module.scss`,'',(err) => {})
+            } else {
                 return
             }
-            fs.mkdir(`${this.componentsPath}/${e}`,(err) => {})
-               this.arr[this.arr.length-1].forEach(e2 => {
-                   if(e2 === '.jsx' || e2 === '.tsx'){
-                    fs.stat(`${this.componentsPath}/${e}/${e}${e2}`, (err) => {  
-                        if (err) {
-                            fs.appendFile(`${this.componentsPath}/${e}/${e}${e2}`,
-                            this.func(e) || this.#baseComponentTemplate(e)                
+        });
 
-                            ,(err) => {})
-                        } else {
-                            return
-                        }
-                    });
-                    return
-                   }
-                fs.appendFile(`${this.componentsPath}/${e}/${e}${e2}`,'',(err) => {})
-                bool && this.#createReduxLogic(e.toLowerCase())
+        
+    }
+
+    createLogic(isOnlyComponent = false,isOnlyRedux = false){
+        if(isOnlyRedux){
+            this.arr.forEach(e => {
+                this.#createReduxLogic(e)
             })
+            return
+        }
+        if(isOnlyComponent){
+            this.arr.forEach(e => {
+                this.#createComponentLogic(e)
+            })
+            return
+        }
+        this.arr.forEach(e => {
+            this.#createComponentLogic(e)
+            this.#createReduxLogic(e)
         })
     }
     removeLogic(){
