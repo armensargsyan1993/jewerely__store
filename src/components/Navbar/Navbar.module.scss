@@ -2,4 +2,8 @@
     .activeClassName{
         color: green;
     }
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
 }

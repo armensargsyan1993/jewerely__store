@@ -7,7 +7,7 @@ interface SvgCreatorProps{
 
 export const SvgCreator:React.FC<SvgCreatorProps> = ({clsName,svgHref}) => {
     return (
-            <svg className={clsName}>
+            <svg width="auto" height="auto" className={clsName}>
                 <use href={svgHref} />
             </svg>
     )

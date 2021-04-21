@@ -19,7 +19,7 @@ export const NavLinkCreator: React.FC<INavLinkCreatorProps> = ({
     <>
       {navLinks.map((e) => {
         return (
-          <div key={e.link} className={styles.root}>
+          <div key={`${e.withoutLinkName ? e.withoutLinkName : e.link}`} className={styles.root}>
             <NavLink
               className={styles.link}
               to={`/${!e.withoutLinkName ? e?.link?.slice().replace(/\s/g, '').replace('/', '') : e.withoutLinkName}`}
