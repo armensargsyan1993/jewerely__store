@@ -1,3 +1,5 @@
+import logotype from '../assets/logo.svg'
+
 import arrowRight from '../assets/icons/Polygon 2.svg'
 import visa from '../assets/icons/Rectangle 13.svg'
 import masterCard from '../assets/icons/Rectangle 14.svg'
@@ -26,6 +28,8 @@ import rect5_6 from '../assets/pictures/Rectangle 5-5.png'
 import rect5_7 from '../assets/pictures/Rectangle 5-6.png'
 import rect5_8 from '../assets/pictures/Rectangle 5-7.png'
 import rect5_9 from '../assets/pictures/Rectangle 5-8.png'
+
+export const logo = logotype
 
 export const icons:IIcons = {
     arrowRight,

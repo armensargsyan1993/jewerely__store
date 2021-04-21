@@ -6,8 +6,9 @@ import { Action } from 'redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { ThunkAction } from 'redux-thunk'
 import { App } from './App'
-import './index.scss'
 import { persistor, store } from './redux/store'
+import './index.scss'
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,7 +1,8 @@
+import { searchReducer } from './search/searchReducer';
 import { combineReducers } from "redux";
 
 export const config = combineReducers({
-
+    search:searchReducer
 })
 const initialState = {}
 
