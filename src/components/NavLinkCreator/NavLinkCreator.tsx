@@ -4,7 +4,8 @@ import { SvgCreator } from '../SvgCreator/SvgCreator'
 import styles from './NavLinkCreator.module.scss'
 
 interface INavLinkCreatorProps {
-  navLinks: Array<INavLinkCreatorPropsNavLinks>
+  navLinks: Array<INavLinkCreatorPropsNavLinks>,
+  clsName?:string
 }
 export interface INavLinkCreatorPropsNavLinks {
   link?: string
@@ -13,6 +14,7 @@ export interface INavLinkCreatorPropsNavLinks {
 }
 
 export const NavLinkCreator: React.FC<INavLinkCreatorProps> = ({
+  clsName = '',
   navLinks,
 }) => {
   return (
@@ -21,7 +23,7 @@ export const NavLinkCreator: React.FC<INavLinkCreatorProps> = ({
         return (
           <div key={`${e.withoutLinkName ? e.withoutLinkName : e.link}`} className={styles.root}>
             <NavLink
-              className={styles.link}
+              className={styles.link + ' ' + clsName}
               to={`/${!e.withoutLinkName ? e?.link?.slice().replace(/\s/g, '').replace('/', '') : e.withoutLinkName}`}
               activeClassName={styles.activeClassName}
             >

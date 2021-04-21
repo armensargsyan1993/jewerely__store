@@ -25,15 +25,15 @@ export const Navbar: FC = () => {
   return (
     <div className={styles.root}>
       <Container className={styles.container} maxWidth="sm">
-        <div className={styles.left}>
-          <NavLinkCreator navLinks={navLinksLeft} />
+        <div className={`${styles.left} ${styles.flex}`}>
+          <NavLinkCreator clsName={styles.link} navLinks={navLinksLeft} />
         </div>
-        <div className={styles.center}>
+        <div className={`${styles.center} ${styles.flex}`}>
           <Logotype />
         </div>
-        <div className={styles.right}>
+        <div className={`${styles.right} ${styles.flex}`}>
           <Search/>
-          <NavLinkCreator navLinks={navLinksRight} />
+          <NavLinkCreator clsName={styles.link} navLinks={navLinksRight} />
         </div>
       </Container>
     </div>
