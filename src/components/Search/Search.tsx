@@ -17,7 +17,7 @@ export const Search = () => {
     <div className={styles.root}>
       <label>
             <SvgCreator clsName={styles.icon} svgHref={`${icons.search}#search`} />
-          <input onFocus={handleFocus} type="search"/>
+          
       </label>
     </div>
   )
