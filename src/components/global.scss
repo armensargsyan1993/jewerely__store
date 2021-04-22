@@ -2,6 +2,6 @@
 @import '../scss/variables.scss';
 
 
-@include ff('gilroylight', 'Gilroy','gilroy-light-webfont');
-@include ff('gilroyextrabold','Gilroy' ,'gilroy-extrabold-webfont');
+@include ff($gilroylight,$Gilroy,$gilroy-light-webfont);
+@include ff($gilroyextrabold,$Gilroy ,$gilroy-extrabold-webfont);
 

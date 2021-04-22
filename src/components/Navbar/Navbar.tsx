@@ -1,10 +1,9 @@
-import { Container } from '@material-ui/core'
 import React, { FC } from 'react'
 import { icons } from '../assets'
 import { Logotype } from '../Logotype/Logotype'
 import {
   INavLinkCreatorPropsNavLinks,
-  NavLinkCreator,
+  NavLinkCreator
 } from '../NavLinkCreator/NavLinkCreator'
 import { Search } from '../Search/Search'
 import styles from './Navbar.module.scss'
@@ -24,7 +23,7 @@ export const Navbar: FC = () => {
 
   return (
     <div className={styles.root}>
-      <Container className={styles.container} maxWidth="sm">
+      <div className={`${styles.container} container`}>
         <div className={`${styles.left} ${styles.flex}`}>
           <NavLinkCreator clsName={styles.link} navLinks={navLinksLeft} />
         </div>
@@ -32,10 +31,10 @@ export const Navbar: FC = () => {
           <Logotype />
         </div>
         <div className={`${styles.right} ${styles.flex}`}>
-          <Search/>
+          <Search />
           <NavLinkCreator clsName={styles.link} navLinks={navLinksRight} />
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

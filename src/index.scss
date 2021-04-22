@@ -13,7 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
-  background-color: $accent;
 }
 
 code {
@@ -24,6 +23,7 @@ code {
 .container{
   max-width: 1110px;
   width: 100%;
+  margin: 0 auto;
 }
 
 *,*:before,*:after{
@@ -37,13 +37,21 @@ a:active{
   color: inherit;
 }
 
-// svg{
-//   width: 19px;
-//   height: 19px;
-// }
+svg{
+  fill: $firstTextColor;
+}
 
+h1,h2,h3,h4,span,p,input{
+  color: $firstTextColor;
+}
 
-
+input{
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  max-width: 200px;
+  width: 100%;
+}
 
 
 .MY__CUSTOM__ERROR__CLASS__NAME{
