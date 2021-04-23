@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { searchThunk } from '../../redux/search/searchActions'
 import { SvgCreator } from '../SvgCreator/SvgCreator'
 import { icons } from '../assets'
+import { Button } from 'react-bootstrap';
 
 export const Search = () => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ export const Search = () => {
   return (
     <div className={styles.root}>
       <label>
-        
+        <Button> asfsdf</Button>
         {/* <Input
           disableUnderline={true}
           className={styles.input}
