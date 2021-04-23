@@ -1,7 +1,23 @@
+@import '../global.scss';
 .root{
     display: flex;
     align-items: center;
+    
     .link{
         color: white;
+    }
+    .activeClassName{
+        span,svg{
+            transition: transform 1s ease;
+        }
+        span{
+            display: block;
+            color: $gold;
+            transform: scale(1.2);
+        }
+        svg{
+            fill:$gold;
+            transform: scale(1.6);
+        }
     }
 }
