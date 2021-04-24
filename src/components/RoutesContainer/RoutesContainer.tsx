@@ -8,7 +8,7 @@ export const RoutesContainer = () => {
     return (
         <div className={styles.root}>
             <Switch>
-                <Route path="/" component={Home}/>
+                <Route path={"/" || '/home'} component={Home}/>
             </Switch>
         </div>
     )

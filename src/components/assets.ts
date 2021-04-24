@@ -28,6 +28,7 @@ import rect5_6 from '../assets/pictures/Rectangle 5-5.png'
 import rect5_7 from '../assets/pictures/Rectangle 5-6.png'
 import rect5_8 from '../assets/pictures/Rectangle 5-7.png'
 import rect5_9 from '../assets/pictures/Rectangle 5-8.png'
+import homeBottom from '../assets/pictures/homeBottom.png'
 
 export const logo = logotype
 
@@ -62,6 +63,7 @@ export const pictures:IPictures = {
     rect5_7,
     rect5_8,
     rect5_9,
+    homeBottom,
 }
 
 interface IIcons {
@@ -95,4 +97,5 @@ interface IPictures {
     rect5_7:string
     rect5_8:string
     rect5_9:string
+    homeBottom:string
 }

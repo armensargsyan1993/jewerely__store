@@ -1,15 +1,54 @@
-.root{
-
+@import '../../global.scss';
+.root {
+  .firstSection{
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      .bottomPicturesContainer {
+        border-top: 1px solid $firstColor;
+        margin-top: 80px;
+        .bottomPictures {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          div {
+            .imgContainer {
+              height: 60px;
+              margin: 30px auto;
+              border-left: 2px solid $firstColor;
+              img {
+                display: block;
+                margin: 0 auto;
+              }
+            }
+            &:first-child > .imgContainer:first-child {
+              border-left: none;
+              margin-left: 0;
+            }
+            .imgContainer:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .secondSection{
+    .titleColor{
+      color: $secondColor;
+    }
+  }
 }
-
-.root::before{
-    content: "";
-    background: url('../../../assets/pictures/bgc.png') center/cover no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    z-index: -1111111;   
+.root::before {
+  content: '';
+  background: url('../../../assets/pictures/bgc.png') center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1111111;
 }

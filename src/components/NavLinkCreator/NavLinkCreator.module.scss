@@ -2,9 +2,10 @@
 .root{
     display: flex;
     align-items: center;
+    justify-content: left;
     
     .link{
-        color: white;
+        @include link()
     }
     .activeClassName{
         span,svg{

@@ -38,12 +38,14 @@ a:active{
 }
 
 svg{
-  fill: $firstTextColor;
+  fill: $firstColor;
   overflow: visible;
 }
 
 h1,h2,h3,h4,span,p,input{
-  color: $firstTextColor;
+  color: $firstColor;
+  margin: 0;
+  padding: 0;
 }
 
 input{
@@ -52,6 +54,10 @@ input{
   padding: 5px;
   max-width: 200px;
   width: 100%;
+}
+
+section{
+  height: 100vh;
 }
 
 

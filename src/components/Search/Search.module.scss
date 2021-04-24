@@ -6,12 +6,12 @@
     .input{
         border: 1px solid transparent;
         transition: border-color 1s ease;
-        color: $firstTextColor;
+        color: $firstColor;
         max-width: 150px;
         width: 100%;
     }
     .focused{
-        border-bottom: 1px solid $firstTextColor;
+        border-bottom: 1px solid $firstColor;
     }
     
 }

@@ -1,0 +1,19 @@
+@import '../global.scss';
+.root{
+    .button{
+        display: block;
+        @include buttonText();
+        max-width: 261px;
+        padding: 10px;
+        background-color: transparent;
+        border: 2px solid $firstColor;
+        cursor: pointer;
+        color: $firstColor;
+        box-shadow: 1px 2.9px 16px $gold;
+        text-align: center;
+        margin: 0 auto;
+        &:active{
+            transform: scale(.98);
+        }
+    }
+}
