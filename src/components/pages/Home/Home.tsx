@@ -7,7 +7,7 @@ import { MyTabs } from '../../MyTabs/MyTabs'
 
 export const Home = () => {
   const bottomData = (
-    <div className={styles.imgContainer}>
+    <div key={Math.random()} className={styles.imgContainer}>
       <img src={pictures.homeBottom} alt="Fine Jewelry" />
     </div>
   )
@@ -25,10 +25,18 @@ export const Home = () => {
           <div className={styles.bottomPicturesContainer}>
             <div className={`container`}>
               <div className={`${styles.bottomPictures}`}>
-                {new Array(3).fill(bottomData)}
+                {new Array(3).fill(' ').map((e,i) => {
+                  return <div key={i} className={styles.imgContainer}>
+                  <img src={pictures.homeBottom} alt="Fine Jewelry" />
+                </div>
+                })}
               </div>
               <div className={`${styles.bottomPictures}`}>
-                {new Array(3).fill(bottomData)}
+              {new Array(3).fill(' ').map((e,i) => {
+                  return <div key={i} className={styles.imgContainer}>
+                  <img src={pictures.homeBottom} alt="Fine Jewelry" />
+                </div>
+                })}
               </div>
             </div>
           </div>

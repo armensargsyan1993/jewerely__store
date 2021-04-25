@@ -3,37 +3,41 @@ import styles from './MyTabs.module.scss'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
+import { pictures } from '../assets'
+
 
 export const MyTabs = () => {
+    const imgArr = [
+      pictures.rect5_1,
+      pictures.rect5_2,
+      pictures.rect5_3,
+      pictures.rect5_4,
+      pictures.rect5_5,
+      pictures.rect5_6,
+    ]
+    const titleArr = [
+      'wedding', 
+      'for husband', 
+      'for wife', 
+      'for partner', 
+      'collection', 
+      'rarity'
+    ]
   return (
     <div className={styles.root}>
       <Tabs>
         <TabList className={styles.tabList}>
-          <Tab className={styles.tab}>title 1</Tab>
-          <Tab className={styles.tab}>Title 2</Tab>
-          <Tab className={styles.tab}>Title 3</Tab>
-          <Tab className={styles.tab}>Title 4</Tab>
-          <Tab className={styles.tab}>Title 5</Tab>
-          <Tab className={styles.tab}>Title 6</Tab>
+          {titleArr.map(e => {
+            return <Tab className={styles.tab}>{e}</Tab>
+          })}
         </TabList>
-        <TabPanel>
-          
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 2</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 3</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 4</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 5</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>Any content 6</h2>
-        </TabPanel>
+         {imgArr.map(() => {
+           return <TabPanel>
+           {imgArr.map(e => {
+             return <img src={e} alt={e}/>
+           })}
+         </TabPanel>
+         })}
       </Tabs>
     </div>
   )
