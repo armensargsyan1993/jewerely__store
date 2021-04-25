@@ -8,6 +8,9 @@
       .bottomPicturesContainer {
         border-top: 1px solid $firstColor;
         margin-top: 80px;
+        :global .container{
+          display: flex;
+        }
         .bottomPictures {
           display: flex;
           flex-wrap: wrap;
@@ -36,7 +39,7 @@
     }
   }
   .secondSection{
-    .titleColor{
+    .title{
       color: $secondColor;
     }
   }

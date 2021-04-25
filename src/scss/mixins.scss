@@ -9,8 +9,8 @@
     }
   }
 
-  @mixin title(){
-    font-family: $gilroyLight;
+  @mixin masterTitle(){
+    font-family: $gilroyExtraBold;
     font-style: normal;
     font-weight: bold;
     font-size: 3.6rem;
@@ -19,6 +19,13 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 15px 0;
+  }
+
+  @mixin title(){
+    @include masterTitle();
+    font-family: $gilroyLight;
+    font-size: 3rem;
+    line-height: 41px;
   }
 
   @mixin buttonText(){
