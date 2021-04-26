@@ -15,6 +15,7 @@ export const Home = () => {
               h1={true}
               title={`best products`}
               btnText={`product catalog`}
+              btnLink={`catalogs`}
             />
           </div>
           <div className={styles.bottomPicturesContainer}>
@@ -38,12 +39,25 @@ export const Home = () => {
         </div>
       </section>
       <section className={styles.secondSection}>
+        <div className="container">
         <Title
           clsName={styles.title}
           title={`real beauty is here`}
           subtitle={`events`}
         />
         <MyTabs/>
+        </div>
+      </section>
+      <section className={styles.thirdSection}>
+        <div className="container">
+          <Title
+          subtitle={`Not sure what to choose?`}
+          title={`Visit our showrooms all over the world`}
+          text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut duis tortor vitae pellentesque egestas quam pulvinar. Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim. Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus. Pharetra lorem sem purus nisi libero viverra ipsum.`}
+          btnText={`our salons`}
+          btnLink={`salons`}
+          />
+        </div>
       </section>
     </div>
   )

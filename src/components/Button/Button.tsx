@@ -5,12 +5,13 @@ import styles from './Button.module.scss'
 interface IButton {
   btnText: string
   clsName:string
+  btnLink?:string
 }
 
-export const Button: React.FC<IButton> = ({ btnText,clsName = ''}) => {
+export const Button: React.FC<IButton> = ({ btnText,clsName = '',btnLink}) => {
   return (
     <div className={styles.root}>
-    <NavLink className={`${styles.button} ${clsName}`} to='catalog'>{btnText}</NavLink>
+    {btnLink && <NavLink className={`${styles.button} ${clsName}`} to={btnLink}>{btnText}</NavLink>}
     </div>
   )
 }

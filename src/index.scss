@@ -57,14 +57,10 @@ input{
 }
 
 section{
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
 .MY__CUSTOM__ERROR__CLASS__NAME{
   border: 2px solid red !important;
-}
-
-h2{
-  color: red;
 }

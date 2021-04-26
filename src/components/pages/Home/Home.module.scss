@@ -10,6 +10,7 @@
         margin-top: 80px;
         :global .container{
           display: flex;
+          justify-content: center;
         }
         .bottomPictures {
           display: flex;
@@ -42,6 +43,10 @@
     .title{
       color: $secondColor;
     }
+  }
+  .thirdSection{
+    background: url('../../../assets/pictures/secondaryBg.png');
+    min-height:  max-content;
   }
 }
 .root::before {

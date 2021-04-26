@@ -9,10 +9,11 @@ text?:string,
 subtitle?:string,
 btnText?:string,
 clsName?:string,
+btnLink?:string
 h1?:boolean
 }
 
-export const Title:React.FC<ITitleProps> = ({h1 = false,title,subtitle,text,btnText,clsName = ''}) => {
+export const Title:React.FC<ITitleProps> = ({h1 = false,title,subtitle,text,btnText,clsName = '',btnLink}) => {
     return (
         <div className={styles.root}>
             {subtitle && <span className={`${styles.subtitle} ${clsName}`} >{subtitle}</span>}
@@ -21,7 +22,7 @@ export const Title:React.FC<ITitleProps> = ({h1 = false,title,subtitle,text,btnT
                 :
                 <h2 className={`${styles.title} ${clsName}`} >{title}</h2> }
             {text && <p className={`${styles.text} ${clsName}`}>{text}</p>}
-            {btnText && <Button clsName={clsName} btnText={btnText} />}
+            {btnText && btnLink && <Button btnLink={btnLink} clsName={`${clsName} ${styles.button}`} btnText={btnText} />}
         </div>
     )
 }
