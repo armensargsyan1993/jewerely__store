@@ -1,29 +1,21 @@
+import React from 'react'
+import styles from './ImgCreator.module.scss'
 
-import React from 'react';
-import styles from './ImgCreator.module.scss';
-
-interface IImgProps{
-    imgArr:Array<string>,
+interface IImgProps {
+  imgArr: Array<string>
 }
 
-const getData = (data:Array<string>) => {
-        let arr = data.map(e => {
-            console.log(`maping`);
-            return (
-                <React.Fragment key={e}>
-                    <img className={styles.img} src={e} alt={e}/>
-                    <span style={{color:'red'}}>{Math.random()}</span>
-                </React.Fragment>
-            )
-        })
-        return arr
-    }
-
-export const ImgCreator:React.FC<IImgProps> =({imgArr}) => {
-    const arr = getData(imgArr)
-    return (
-        <div className={styles.root}>
-            {arr}
-        </div>
-    )
+export const ImgCreator: React.FC<IImgProps> = ({ imgArr }) => {
+  return (
+    <div className={styles.root}>
+        {imgArr.map((e,i,arr) => {
+            let elemSrc = arr[Math.floor(Math.random() * arr.length)]
+        return (
+            <div className={styles.innerContainer} key={e}>
+                 <img className={styles.img} src={elemSrc} alt={elemSrc} />
+            </div>
+        )
+      })}
+    </div>
+  )
 }
