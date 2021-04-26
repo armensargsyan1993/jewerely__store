@@ -4,6 +4,7 @@ import styles from './MyTabs.module.scss'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import { pictures } from '../assets'
+import  { ImgCreator }  from '../ImgCreator/ImgCreator'
 
 
 export const MyTabs = () => {
@@ -25,20 +26,20 @@ export const MyTabs = () => {
     ]
   return (
     <div className={styles.root}>
+      <div className="container">
       <Tabs>
         <TabList className={styles.tabList}>
           {titleArr.map(e => {
-            return <Tab className={styles.tab}>{e}</Tab>
+            return <Tab key={e.replace(/\s/,'')} className={styles.tab}>{e}</Tab>
           })}
         </TabList>
-         {imgArr.map(() => {
-           return <TabPanel>
-           {imgArr.map(e => {
-             return <img src={e} alt={e}/>
-           })}
+         {imgArr.map((e) => {
+           return <TabPanel key={e.replace(/\s/,'')}>
+           <ImgCreator imgArr={imgArr}/>
          </TabPanel>
          })}
       </Tabs>
+      </div>
     </div>
   )
 }

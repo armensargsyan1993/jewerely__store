@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { SvgCreator } from '../SvgCreator/SvgCreator'
 import styles from './NavLinkCreator.module.scss'

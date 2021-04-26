@@ -1,16 +1,11 @@
 import React from 'react'
-import { icons, pictures } from '../../assets'
-import { Title } from '../../Title/Title'
-import styles from './Home.module.scss'
+import { pictures } from '../../assets'
 import '../../global.scss'
 import { MyTabs } from '../../MyTabs/MyTabs'
+import { Title } from '../../Title/Title'
+import styles from './Home.module.scss'
 
 export const Home = () => {
-  const bottomData = (
-    <div key={Math.random()} className={styles.imgContainer}>
-      <img src={pictures.homeBottom} alt="Fine Jewelry" />
-    </div>
-  )
   return (
     <div className={styles.root}>
       <section className={styles.firstSection}>
