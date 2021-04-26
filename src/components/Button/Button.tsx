@@ -4,7 +4,7 @@ import styles from './Button.module.scss'
 
 interface IButton {
   btnText: string
-  clsName:string
+  clsName?:string
   btnLink?:string
 }
 

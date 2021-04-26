@@ -1,0 +1,15 @@
+@import '../global.scss';
+.root{
+    margin-top: 60px;
+    :global .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button{
+        color: $secondColor;
+        box-shadow: $boxShadowDark;
+        border-radius: 44% 0 44% 0;
+        font-family: $gilroyExtraBold;
+    }
+}

@@ -1,11 +1,23 @@
 import React from 'react'
 import { pictures } from '../../assets'
+import { BlogCreator } from '../../BlogCreator/BlogCreator'
 import '../../global.scss'
 import { MyTabs } from '../../MyTabs/MyTabs'
 import { Title } from '../../Title/Title'
 import styles from './Home.module.scss'
 
 export const Home = () => {
+  const blogs = [
+    {src:pictures.rect5_7,text:`How to choose
+    watch for his
+    future wife`},
+    {src:pictures.rect5_8,text:`Husband cufflinks:
+    7 key rules
+    accessory purchases`},
+    {src:pictures.rect5_9,text:`How to choose
+    wedding rings
+    newlyweds`}
+  ]
   return (
     <div className={styles.root}>
       <section className={styles.firstSection}>
@@ -67,6 +79,7 @@ export const Home = () => {
           title={`Visit our showrooms all over the world`}
           />
         </div>
+        <BlogCreator blogs={blogs}/>
       </section>
     </div>
   )
