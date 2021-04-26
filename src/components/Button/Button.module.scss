@@ -1,5 +1,6 @@
 @import '../global.scss';
 .root{
+    padding: 25px 0 100px 0;
     .button{
         display: block;
         @include buttonText();

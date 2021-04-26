@@ -59,6 +59,15 @@ export const Home = () => {
           />
         </div>
       </section>
+      <section className={styles.fourthSection}>
+        <div className="container">
+          <Title
+          clsName={styles.title}
+          subtitle={`Not sure what to choose?`}
+          title={`Visit our showrooms all over the world`}
+          />
+        </div>
+      </section>
     </div>
   )
 }
