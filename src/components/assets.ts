@@ -1,6 +1,6 @@
 import logotype from '../assets/logo.svg'
 
-import arrowRight from '../assets/icons/Polygon 2.svg'
+import arrowRight from '../assets/icons/subscribe__icon.svg'
 import visa from '../assets/icons/Rectangle 13.svg'
 import masterCard from '../assets/icons/Rectangle 14.svg'
 import unknownUser from '../assets/icons/Vector-1.svg'

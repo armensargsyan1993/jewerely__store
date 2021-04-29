@@ -1,0 +1,20 @@
+.root{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    // justify-content: center;
+    iframe{
+        flex: 2;
+        min-height: 300px;
+    }
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 2;
+        img{
+            display: flex;
+            flex: 1;
+            max-height: 300px;
+        }
+    }
+}

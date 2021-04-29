@@ -1,17 +1,14 @@
+@import '../global.scss';
 .root{
     position: absolute;
     top: 0;
     width: 100%;
-    .activeClassName{
-        color: green;
-    }
     .container{
         display: flex;
         justify-content: space-between;
         align-items: center;
         .flex{
             display: flex;
-            
         }
     }
     .link{
@@ -25,6 +22,45 @@
     }
     .right{
         justify-content: flex-end;
+    }
+    .burgerButton{
+        transition: all .8s linear;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        border-top:2px solid $gold;
+        border-bottom:2px solid $gold;
+        &:before{
+            transition: all .8s linear;
+            content: '';
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            border: 1px solid $gold;
+        }
+    }
 
+    .burgerActive{
+        border-radius: 50%;
+        &:before{
+            opacity: 0;
+        }
+    }
+}
+
+@media screen and (max-width:450px){
+    .container{
+        display: block !important;
+        text-align: center;
+        .burger{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input{
+                border-bottom: 1px solid $gold;
+            }
+        }
     }
 }

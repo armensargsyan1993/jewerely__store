@@ -40,7 +40,13 @@ a:active{
 
 svg{
   fill: $firstColor;
-  overflow: visible;
+  position: relative;
+  use{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+  }
 }
 
 h1,h2,h3,h4,span,p,input{
@@ -64,4 +70,9 @@ section{
 
 .MY__CUSTOM__ERROR__CLASS__NAME{
   border: 2px solid red !important;
+}
+
+button{
+  background-color: transparent;
+  border: none;
 }

@@ -65,3 +65,22 @@
   position: absolute;
   z-index: -1111111;
 }
+
+.arrowRight{
+  // height: 17px;
+  // width: 17px;
+}
+
+.exclusive{
+  padding-bottom: 120px;
+  margin-top: 60px;
+  .exclusiveLeft{
+    div{
+      display: flex;
+      align-items: center;
+      span{
+        margin-left: 20px;
+      }
+    }
+  }
+}
