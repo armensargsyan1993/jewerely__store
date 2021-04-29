@@ -1,8 +1,10 @@
+import { tabsReducer } from './tabs/tabsReducer';
 import { searchReducer } from './search/searchReducer';
 import { combineReducers } from "redux";
 
 export const config = combineReducers({
-    search:searchReducer
+    search:searchReducer,
+    tabs:tabsReducer
 })
 const initialState = {}
 

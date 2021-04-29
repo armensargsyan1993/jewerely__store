@@ -33,9 +33,10 @@ export const MyTabs = () => {
             return <Tab key={e.replace(/\s/,'')} className={styles.tab}>{e}</Tab>
           })}
         </TabList>
-         {imgArr.map((e) => {
+         {imgArr.map((e,i) => {
+
            return <TabPanel key={e.replace(/\s/,'')}>
-           <ImgCreator imgArr={imgArr}/>
+           <ImgCreator id={`${i}`} imgArr={imgArr}/>
          </TabPanel>
          })}
       </Tabs>

@@ -13,7 +13,7 @@ export const BlogCreator:React.FC<IBlogCreatorProps> = ({blogs}) => {
         <div className={styles.root}>
             <div className="container">
                 {blogs.map(e => {
-                    return <Blog {...e}/>
+                    return <Blog key={e.src} {...e}/>
                 })}
             </div>
             <Button

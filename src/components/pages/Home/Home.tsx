@@ -81,6 +81,11 @@ export const Home = () => {
         </div>
         <BlogCreator blogs={blogs}/>
       </section>
+      <section className={styles.fifthSection}>
+        <div className="container">
+          
+        </div>
+      </section>
     </div>
   )
 }
