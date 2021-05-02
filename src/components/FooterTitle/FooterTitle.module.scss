@@ -1,0 +1,7 @@
+@import '../global.scss';
+.root{
+    .title{
+        color: $secondColor;
+        border-bottom:1px solid $secondColor;
+    }
+}

@@ -74,6 +74,10 @@
 .exclusive{
   padding-bottom: 120px;
   margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   .exclusiveLeft{
     div{
       display: flex;
@@ -81,6 +85,36 @@
       span{
         margin-left: 20px;
       }
+    }
+  }
+  .exclusiveRight{
+    max-width: 448px;
+    width: 100%;
+    padding: 14px;
+    border: 1px solid $thirdColor;
+    form{
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      border: 1px solid $firstColor;
+      background-color: $firstColor;
+      justify-content: center;
+      input{
+        border: 1px solid $thirdColor;
+        padding: 10px;
+        color: $secondColor;
+      }
+      button{
+        background-color: $secondColor;
+        margin-left: 30px;
+        color: white;
+        padding: 10px 35px;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+    .inputContainer{
+      position: relative;
     }
   }
 }

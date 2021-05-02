@@ -1,15 +1,43 @@
-import React from 'react'
+import  React, { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
 import { icons, pictures } from '../../assets'
 import { BlackSection } from '../../BlackSection/BlackSection'
 import { BlogCreator } from '../../BlogCreator/BlogCreator'
 import '../../global.scss'
 import { MyTabs } from '../../MyTabs/MyTabs'
+import { Prompt } from '../../Prompt/Prompt'
 import { SocialCreator } from '../../SocialCreator/SocialCreator'
 import { SvgCreator } from '../../SvgCreator/SvgCreator'
 import { Title } from '../../Title/Title'
 import styles from './Home.module.scss'
 
-export const Home = () => {
+type FormData = {
+  email: string;
+};
+
+export const Home:React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    clearErrors,
+    formState: { errors },
+  } = useForm<FormData>()
+  const onSubmit = (data:any) => {
+    console.log(data)
+  }
+
+  useEffect(() => {
+    if(errors.email){
+      const id = setTimeout(() => {
+        clearErrors('email')
+      },5000)
+      return () => {
+        clearTimeout(id)
+      }
+
+    }
+  },[errors.email,clearErrors])
   const blogs = [
     {
       src: pictures.rect5_7,
@@ -155,10 +183,20 @@ export const Home = () => {
             </div>
           </div>
           <div className={styles.exclusiveRight}>
-
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className={styles.inputContainer}>
+                <input placeholder={`email`} {...register('email',{required:true})}/>
+                {errors.email && <Prompt text={`please add email to send`}/> }
+              </div>
+              <button type={`submit`}>submit</button>
+            </form>
           </div>
         </div>
       </BlackSection>
     </div>
   )
 }
+function id(id: any) {
+  throw new Error('Function not implemented.')
+}
+

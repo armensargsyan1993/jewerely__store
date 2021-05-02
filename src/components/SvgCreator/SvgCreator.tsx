@@ -8,15 +8,20 @@ interface SvgCreatorProps {
 export const SvgCreator: React.FC<SvgCreatorProps> = ({ clsName, svgHref }) => {
   const [width, setWidth] = useState(0)
   const [height, setHeight] = useState(0)
+
+  const [isLoad, setIsLoad] = useState(false)
   const ref = useRef<any>()
 
   useEffect(() => {
-    ref.current.onload = () => {
-      const { width: w, height: h, x, y } = ref.current.getBBox()
-      setWidth(() => Math.ceil(w) + Math.ceil(x))
-      setHeight(() => Math.ceil(h) + Math.ceil(y))
+        const { width: w, height: h, x, y } = ref.current.getBBox()
+          setWidth(() => Math.ceil(w) + Math.ceil(x))
+          setHeight(() => Math.ceil(h) + Math.ceil(y))
+  }, [isLoad])
+  useEffect(() => {
+    if(width === 0){
+      setIsLoad((prev) => !prev)
     }
-  }, [ref])
+    },[isLoad])
   return (
     <svg ref={ref} width={width} height={height} className={clsName}>
       <use href={svgHref} />
